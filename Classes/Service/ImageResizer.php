@@ -381,6 +381,7 @@ class ImageResizer
             $currentLocale = (string)setlocale(LC_CTYPE, '0');
             $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLocale'] = $currentLocale;
         }
+        usleep(2000);
         $tempFileInfo = $gifCreator->imageMagickConvert($fileName, $destExtension, '', '', $imParams, '', $options, true);
         if ($tempFileInfo === null) {
             $message = LocalizationUtility::translate('message.cannotResize', 'image_autoresize');

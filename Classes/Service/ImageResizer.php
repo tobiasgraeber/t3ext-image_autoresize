@@ -347,6 +347,12 @@ class ImageResizer
             }
         }
 
+        if ((bool)$ruleset['rotate_only'] === true) {
+            if (!$isRotated) {
+                return $fileName;
+            }
+        }
+
         if (
             isset($ruleset['max_size'])
             && $ruleset['max_size'] > 0

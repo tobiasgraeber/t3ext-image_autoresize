@@ -91,6 +91,12 @@ return [
                 'type' => 'check',
             ],
         ],
+        'rotate_only' => [
+            'label' => 'Rotate Images only (does not resize images, only rotates the ones with rotate-exif info)',
+            'config' => [
+                'type' => 'check',
+            ],
+        ],
         'keep_metadata' => [
             'label' => 'LLL:EXT:image_autoresize/Resources/Private/Language/locallang_tca.xlf:tx_imageautoresize.keep_metadata',
             'config' => [
@@ -123,11 +129,10 @@ return [
         ],
     ],
     'types' => [
-        '0' => ['showitem' =>
-            'directories,threshold,file_types,
+        '0' => ['showitem' =>'directories,threshold,file_types,
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:ALT.imgDimensions;dimensions,
 			--div--;LLL:EXT:image_autoresize/Resources/Private/Language/locallang_tca.xlf:tabs.options,
-				auto_orient,auto_orient_custom,keep_metadata,resize_png_with_alpha,conversion_mapping,
+				auto_orient,auto_orient_custom,rotate_only,keep_metadata,resize_png_with_alpha,conversion_mapping,
 			--div--;LLL:EXT:image_autoresize/Resources/Private/Language/locallang_tca.xlf:tabs.rulesets,
 				rulesets
 		'],
